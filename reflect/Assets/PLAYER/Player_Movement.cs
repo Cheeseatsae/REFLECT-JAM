@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 public class Player_Movement : MonoBehaviour
 {
-    private Rigidbody body;
+    [HideInInspector] public Rigidbody body;
     
     public float acceleration;
     public float maxSpeed;
@@ -24,15 +24,17 @@ public class Player_Movement : MonoBehaviour
     
     private bool airborne;
     
-    private float _inputX;
-    private float _inputY;
+    [HideInInspector] public float _inputX;
+    [HideInInspector] public float _inputY;
     private float _inputJump;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    private Player_View pView;
+
+    private void Awake()
     {
         body = GetComponent<Rigidbody>();
-
+        pView = GetComponentInChildren<Player_View>();
+        
         InputX += playerNum;
         InputY += playerNum;
         InputJump += playerNum;
@@ -64,13 +66,16 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetButtonDown(InputJump)) Jump();
     }
 
+    public delegate void HitGround();
+    public event HitGround OnHitGround;
+    
     private void OnCollisionEnter(Collision other)
     {
         foreach (ContactPoint c in other.contacts)
         {
             if (c.normal.y > 0.5f)
             {
-                Debug.DrawLine(c.point, c.point + c.normal, Color.red, 1);
+                OnHitGround?.Invoke();
                 airborne = false;
             }
         }
