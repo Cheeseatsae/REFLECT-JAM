@@ -134,21 +134,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8793538555971833475, guid: 36623151127b15f4e8bb6e59d89ad37f,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.4605703
-      objectReference: {fileID: 0}
-    - target: {fileID: 8793538555971833475, guid: 36623151127b15f4e8bb6e59d89ad37f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.0448234
-      objectReference: {fileID: 0}
-    - target: {fileID: 8793538555971833475, guid: 36623151127b15f4e8bb6e59d89ad37f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.544838
-      objectReference: {fileID: 0}
-    - target: {fileID: 8793538555971833475, guid: 36623151127b15f4e8bb6e59d89ad37f,
-        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -187,21 +172,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8793538555971833485, guid: 36623151127b15f4e8bb6e59d89ad37f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5ba91a0de88d0954c8b24f68f47587db, type: 2}
-    - target: {fileID: 8793538555971833486, guid: 36623151127b15f4e8bb6e59d89ad37f,
-        type: 3}
-      propertyPath: playerNum
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4559546319892211222, guid: 36623151127b15f4e8bb6e59d89ad37f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5ba91a0de88d0954c8b24f68f47587db, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36623151127b15f4e8bb6e59d89ad37f, type: 3}
 --- !u!1 &573361012
@@ -519,7 +489,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b42c0691ce214c2479de1d2e65b43952, type: 2}
+  - {fileID: 2100000, guid: fafade62de586f543aa6d1def0af2b9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -987,6 +957,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PLAYER
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793538555971833481, guid: 36623151127b15f4e8bb6e59d89ad37f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8793538555971833475, guid: 36623151127b15f4e8bb6e59d89ad37f,
         type: 3}
