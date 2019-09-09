@@ -22,11 +22,11 @@ public class Player_View : MonoBehaviour
     {
         if (Math.Abs(pMove._inputX) > 0.1f || Mathf.Abs(pMove._inputY) > 0.1f)
         {
-            transform.LookAt(transform.position + new Vector3(pMove._inputX * 60, pMove.body.velocity.y,pMove._inputY * 60));
+            transform.LookAt(transform.position + new Vector3(pMove._inputX * 40, pMove.body.velocity.y,pMove._inputY * 40));
         } 
-        else if (Math.Abs(pMove.body.velocity.x) > 0.3f || Math.Abs(pMove.body.velocity.y) > 0.3f)
+        else if (Math.Abs(pMove.body.velocity.x) > 0.3f || Math.Abs(pMove.body.velocity.z) > 0.3f)
         {
-            transform.LookAt(transform.position + new Vector3(pMove.body.velocity.x * 60, pMove.body.velocity.y,pMove.body.velocity.z * 60));
+            transform.LookAt(transform.position + new Vector3(pMove.body.velocity.x * 40, pMove.body.velocity.y,pMove.body.velocity.z * 40));
         }
     }
 

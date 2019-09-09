@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 8793538555971833484}
   - component: {fileID: 8793538555971833487}
   - component: {fileID: 8793538555971833486}
+  - component: {fileID: 1150413205021752160}
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Untagged
@@ -270,9 +271,25 @@ MonoBehaviour:
   playerNum: 1
   InputX: Horizontal
   InputY: Vertical
-  InputJump: Jump
+  InputJump: A
   _inputX: 0
   _inputY: 0
+--- !u!114 &1150413205021752160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793538555971833481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb5996dd7c18e347bdc9d63892bab1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pMove: {fileID: 0}
+  InputXButton: X
+  InputYButton: Y
+  InputBButton: B
 --- !u!1001 &5809949539678678197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,11 +297,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2044232966430486941}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: e4c323e19a8ee5a4ba8514d0f8155730,
-        type: 3}
-      propertyPath: m_Name
-      value: SlimePlayerModel
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e4c323e19a8ee5a4ba8514d0f8155730,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -293,7 +305,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e4c323e19a8ee5a4ba8514d0f8155730,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.03
+      value: -0.881
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e4c323e19a8ee5a4ba8514d0f8155730,
         type: 3}
@@ -354,6 +366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e4c323e19a8ee5a4ba8514d0f8155730,
+        type: 3}
+      propertyPath: m_Name
+      value: SlimePlayerModel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4c323e19a8ee5a4ba8514d0f8155730, type: 3}
