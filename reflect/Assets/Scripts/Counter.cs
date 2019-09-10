@@ -20,12 +20,12 @@ public class Counter : MonoBehaviour
     void Update()
     {
         //write update player hit function
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            foodhit();
-        }
+//        if (Input.GetKeyDown(KeyCode.Space))
+//        {
+//            foodhit();
+//        }
     }
-    public void foodhit()
+    public void FoodHit()
     {
         playerscore++;
         ScoreNumberAdd();
@@ -34,10 +34,14 @@ public class Counter : MonoBehaviour
 
     public void ScoreNumberAdd()
     {
-        if(playerscore > currentDisplayScore)
+        if (playerscore > currentDisplayScore && playerscore < scoreNumbers.Length)
         {
             GetComponent<Image>().sprite = scoreNumbers[playerscore];
             currentDisplayScore = playerscore;
+        }
+        else
+        {
+            // WIN GAME
         }
     }
 }

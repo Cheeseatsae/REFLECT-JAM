@@ -32,6 +32,14 @@ public class Ball : MonoBehaviour
         Debug.Log(body.velocity.magnitude);
     }
 
+    public delegate void PlayerHit(GameObject player);
+    public event PlayerHit OnPlayerHit;
+    
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.GetComponent<Player_Movement>()) OnPlayerHit?.Invoke(other.gameObject); 
+    }
+
     void ResetSpeed()
     {
         body.velocity = body.velocity.normalized * speed;
