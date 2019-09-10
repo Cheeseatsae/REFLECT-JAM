@@ -61,6 +61,15 @@ public class Player_Donezelwashington : MonoBehaviour
         Player2.transform.position = player2Start;
         player2View.rotation = player2StartRot;
 
+        Player_Abilities p1 = Player1.GetComponent<Player_Abilities>();
+        p1.StopAllCoroutines();
+        p1.ballHeld = false;
+        p1.cooldown = false;
+        Player_Abilities p2 = Player2.GetComponent<Player_Abilities>();
+        p2.StopAllCoroutines();
+        p2.ballHeld = false;
+        p2.cooldown = false;
+        
         if (playerLost == 1)
         {
             Ball.GameBall.transform.position = Player1.transform.position + (player1View.forward * 5);

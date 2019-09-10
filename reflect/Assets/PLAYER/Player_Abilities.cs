@@ -56,8 +56,8 @@ public class Player_Abilities : MonoBehaviour
         return false;
     }
 
-    private bool cooldown = false;
-    private bool ballHeld = false;
+    public bool cooldown = false;
+    public bool ballHeld = false;
     
     void AButton()
     {
