@@ -61,17 +61,29 @@ public class Player_Donezelwashington : MonoBehaviour
         Player2.transform.position = player2Start;
         player2View.rotation = player2StartRot;
 
+        Player_Abilities p1 = Player1.GetComponent<Player_Abilities>();
+        p1.StopAllCoroutines();
+        p1.ballHeld = false;
+        p1.cooldown = false;
+        Player_Abilities p2 = Player2.GetComponent<Player_Abilities>();
+        p2.StopAllCoroutines();
+        p2.ballHeld = false;
+        p2.cooldown = false;
+        
         if (playerLost == 1)
         {
             Ball.GameBall.transform.position = Player1.transform.position + (player1View.forward * 5);
             Ball.GameBall.transform.position = new Vector3(Ball.GameBall.transform.position.x, ballStartY, Ball.GameBall.transform.position.z);
+            Ball.instance.lastPlayer = Player1;
         }
         else
         {
             Ball.GameBall.transform.position = Player2.transform.position + (player2View.forward * 5);
             Ball.GameBall.transform.position = new Vector3(Ball.GameBall.transform.position.x, ballStartY, Ball.GameBall.transform.position.z);
+            Ball.instance.lastPlayer = Player2;
         }
 
+        Ball.instance.speed = Ball.instance.baseSpeed;
         Ball.instance.body.velocity = Vector3.zero;
         Ball.GameBall.transform.localScale = Vector3.one;
     }

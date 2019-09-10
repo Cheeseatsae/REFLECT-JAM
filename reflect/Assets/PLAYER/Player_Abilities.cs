@@ -56,8 +56,8 @@ public class Player_Abilities : MonoBehaviour
         return false;
     }
 
-    private bool cooldown = false;
-    private bool ballHeld = false;
+    public bool cooldown = false;
+    public bool ballHeld = false;
     
     void AButton()
     {
@@ -83,11 +83,11 @@ public class Player_Abilities : MonoBehaviour
         {
             time += Time.deltaTime;
             Ball.instance.body.velocity = Vector3.zero;
-            Ball.GameBall.transform.position = transform.position + pView.transform.forward;
+            Ball.GameBall.transform.position = transform.position + (pView.transform.forward * 2);
             
             yield return null;
         }
-        Ball.instance.Pie(pView.transform.forward.x, pView.transform.forward.z);
+        Ball.instance.Pie(pView.transform.forward.x, pView.transform.forward.z, this.gameObject);
         ballHeld = false;
     }
     
@@ -99,7 +99,7 @@ public class Player_Abilities : MonoBehaviour
         StartCoroutine(Cooldown());
         Debug.Log("hitball");
         //Vector3 force = Vector3.Normalize(Ball.GameBall.transform.position - transform.position);
-        Ball.instance.Watermelon(pView.transform.forward.x, pView.transform.forward.z);
+        Ball.instance.Watermelon(pView.transform.forward.x, pView.transform.forward.z, this.gameObject);
         pMove.Knockback(9000, 0.5f);
     }
 
@@ -110,7 +110,7 @@ public class Player_Abilities : MonoBehaviour
         if (!CheckBall(2.5f)) return;
         StartCoroutine(Cooldown());
         Debug.Log("hitball");
-        Ball.instance.Jam(pView.transform.forward.x, pView.transform.forward.z);
+        Ball.instance.Jam(pView.transform.forward.x, pView.transform.forward.z, this.gameObject);
     }
     
     void YButton()
@@ -120,7 +120,7 @@ public class Player_Abilities : MonoBehaviour
         if (!CheckBall(2.5f)) return;
         StartCoroutine(Cooldown());
         Debug.Log("hitball");
-        Ball.instance.Chilli(pView.transform.forward.x, pView.transform.forward.z);
+        Ball.instance.Chilli(pView.transform.forward.x, pView.transform.forward.z, this.gameObject);
     }
 
     IEnumerator Cooldown(float duration = 0.7f)
