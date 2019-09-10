@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1248323523888560848}
   - component: {fileID: 1248323523888560849}
   - component: {fileID: 5092666128633649430}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,4 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 0}
+  baseSpeed: 14
   speed: 10
+  lastPlayer: {fileID: 0}

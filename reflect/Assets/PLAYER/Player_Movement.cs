@@ -34,11 +34,14 @@ public class Player_Movement : MonoBehaviour
     public PhysicMaterial defaultPhysMat;
     [HideInInspector] public bool stunned = false;
 
+    private Animator anim;
+    
     private void Awake()
     {
         body = GetComponent<Rigidbody>();
         pView = GetComponentInChildren<Player_View>();
         GetComponent<Collider>().material = defaultPhysMat;
+        anim = GetComponentInChildren<Animator>();
         
         InputX += playerNum;
         InputY += playerNum;
@@ -115,6 +118,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (!airborne)
         {
+            anim.SetTrigger("Jump");
             body.velocity = body.velocity + (Vector3.up * jumpHeight);
             airborne = true;
         }
