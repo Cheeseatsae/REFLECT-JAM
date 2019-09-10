@@ -263,8 +263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 0}
-  acceleration: 6000
-  maxSpeed: 12
+  acceleration: 8000
+  maxSpeed: 15
   breaking: 0.1
   breakingThreshold: 0.05
   jumpHeight: 12

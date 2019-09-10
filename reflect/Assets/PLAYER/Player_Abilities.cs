@@ -55,21 +55,47 @@ public class Player_Abilities : MonoBehaviour
         
         return false;
     }
+
+    private bool cooldown = false;
+    private bool ballHeld = false;
     
     void AButton()
     {
         Debug.Log("Pressing A");
-        if (!CheckBall(2.5f)) return;
+        if (ballHeld) return;
+        if (cooldown) return;
+        if (!CheckBall(1.5f)) return;
         
         Debug.Log("hitball");
+        StartCoroutine(HoldBall());
+    }
+
+    IEnumerator HoldBall()
+    {
+        ballHeld = true;
+        float duration = 1 + (Ball.instance.speed * 0.004f);
+        StartCoroutine(Cooldown(duration + 0.2f));
+        float time = 0;
+        Ball.instance.body.velocity = Vector3.zero;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            Ball.instance.body.velocity = Vector3.zero;
+            Ball.GameBall.transform.position = transform.position + pView.transform.forward;
+            
+            yield return null;
+        }
         Ball.instance.Pie(pView.transform.forward.x, pView.transform.forward.z);
+        ballHeld = false;
     }
     
     void BButton()
     {
         Debug.Log("Pressing B");
+        if (cooldown) return;
         if (!CheckBall(2.5f)) return;
-        
+        StartCoroutine(Cooldown());
         Debug.Log("hitball");
         //Vector3 force = Vector3.Normalize(Ball.GameBall.transform.position - transform.position);
         Ball.instance.Watermelon(pView.transform.forward.x, pView.transform.forward.z);
@@ -79,8 +105,9 @@ public class Player_Abilities : MonoBehaviour
     void XButton()
     {
         Debug.Log("Pressing X");
+        if (cooldown) return;
         if (!CheckBall(2.5f)) return;
-        
+        StartCoroutine(Cooldown());
         Debug.Log("hitball");
         Ball.instance.Jam(pView.transform.forward.x, pView.transform.forward.z);
     }
@@ -88,9 +115,17 @@ public class Player_Abilities : MonoBehaviour
     void YButton()
     {
         Debug.Log("Pressing Y");
+        if (cooldown) return;
         if (!CheckBall(2.5f)) return;
-        
+        StartCoroutine(Cooldown());
         Debug.Log("hitball");
         Ball.instance.Chilli(pView.transform.forward.x, pView.transform.forward.z);
+    }
+
+    IEnumerator Cooldown(float duration = 0.7f)
+    {
+        cooldown = true;
+        yield return new WaitForSecondsRealtime(duration);
+        cooldown = false;
     }
 }

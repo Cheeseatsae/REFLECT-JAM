@@ -13,7 +13,7 @@ public class Ball : MonoBehaviour
     private float previousMagnitude;
     private Vector3 previousVelocity;
 
-    public float speed = 10;
+    public float speed = 14;
 
     private void Awake()
     {
