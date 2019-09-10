@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 119214623}
   - component: {fileID: 119214622}
   m_Layer: 5
-  m_Name: Options
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +148,7 @@ RectTransform:
   m_GameObject: {fileID: 119214620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.16666667, y: 0.625, z: 0}
+  m_LocalScale: {x: 0.125, y: 0.35, z: 0}
   m_Children:
   - {fileID: 605699280}
   m_Father: {fileID: 1646351284}
@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.233334, y: -1.6250038}
+  m_AnchoredPosition: {x: -12.7, y: -1.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &119214622
@@ -342,7 +342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.899967, y: -5.2}
+  m_AnchoredPosition: {x: 32, y: 4.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &539323753
@@ -365,7 +365,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 921c4f367cf8bf24c916710c17152e2c, type: 3}
+  m_Texture: {fileID: 2800000, guid: aa046373725c00b45a0fc99221e6a2f9, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 605699282}
   - component: {fileID: 605699281}
   m_Layer: 5
-  m_Name: Options Text
+  m_Name: Credits Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,7 +414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.199986, y: -6.5999956}
+  m_AnchoredPosition: {x: 16.199986, y: -3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605699281
@@ -437,7 +437,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 597f662d07cbd754396f4417ce44ffd5, type: 3}
+  m_Texture: {fileID: 2800000, guid: 918d986a5d86b8f4a871dffcdf72abc2, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -479,15 +479,15 @@ RectTransform:
   m_GameObject: {fileID: 622333056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 48}
-  m_LocalScale: {x: 9.4344635, y: 6.6627593, z: 1.5748031}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.5748031}
   m_Children: []
   m_Father: {fileID: 880900844}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -33}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622333058
 MonoBehaviour:
@@ -816,7 +816,7 @@ RectTransform:
   m_GameObject: {fileID: 1267065124}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.16666667, y: 0.625, z: 0}
+  m_LocalScale: {x: 0.125, y: 0.35, z: 0}
   m_Children:
   - {fileID: 1285594035}
   m_Father: {fileID: 1608265002}
@@ -955,7 +955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.299978, y: -5.600023}
+  m_AnchoredPosition: {x: 11, y: 2.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1285594036
@@ -978,7 +978,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 6f9d86607ac38844bb3a7f6ff2f900c3, type: 3}
+  m_Texture: {fileID: 2800000, guid: 585c76b60c99b2c4a9995d183d52b9f0, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1093,7 +1093,7 @@ RectTransform:
   m_GameObject: {fileID: 1464627281}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.16666667, y: 0.625, z: 0}
+  m_LocalScale: {x: 0.125, y: 0.35, z: 0}
   m_Children:
   - {fileID: 539323752}
   m_Father: {fileID: 903504233}
@@ -1233,7 +1233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -251, y: -30}
+  m_AnchoredPosition: {x: -250, y: -30}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608265003
@@ -1283,7 +1283,7 @@ GameObject:
   - component: {fileID: 1646351286}
   - component: {fileID: 1646351285}
   m_Layer: 5
-  m_Name: Button Options
+  m_Name: Button Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
