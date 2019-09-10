@@ -20,6 +20,8 @@ public class Player_View : MonoBehaviour
 
     private void Update()
     {
+        if (pMove.stunned) return;
+        
         if (Math.Abs(pMove._inputX) > 0.1f || Mathf.Abs(pMove._inputY) > 0.1f)
         {
             transform.LookAt(transform.position + new Vector3(pMove._inputX * 40, pMove.body.velocity.y,pMove._inputY * 40));

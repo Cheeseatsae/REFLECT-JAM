@@ -263,17 +263,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 0}
-  acceleration: 5000
-  maxSpeed: 10
+  acceleration: 6000
+  maxSpeed: 12
   breaking: 0.1
   breakingThreshold: 0.05
   jumpHeight: 12
   playerNum: 1
   InputX: Horizontal
   InputY: Vertical
-  InputJump: A
+  InputJump: Jump
   _inputX: 0
   _inputY: 0
+  slidePhysMat: {fileID: 13400000, guid: 848e7ecac142908408704053ce5cdcf7, type: 2}
+  defaultPhysMat: {fileID: 13400000, guid: 9b9edf610e8507846a7097eb529aa650, type: 2}
+  stunned: 0
 --- !u!114 &1150413205021752160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,10 +289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb5996dd7c18e347bdc9d63892bab1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pMove: {fileID: 0}
+  pView: {fileID: 0}
   InputXButton: X
   InputYButton: Y
   InputBButton: B
+  InputAButton: A
 --- !u!1001 &5809949539678678197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297,6 +301,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2044232966430486941}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: e4c323e19a8ee5a4ba8514d0f8155730,
+        type: 3}
+      propertyPath: m_Name
+      value: SlimePlayerModel
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e4c323e19a8ee5a4ba8514d0f8155730,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -366,11 +375,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: e4c323e19a8ee5a4ba8514d0f8155730,
-        type: 3}
-      propertyPath: m_Name
-      value: SlimePlayerModel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4c323e19a8ee5a4ba8514d0f8155730, type: 3}

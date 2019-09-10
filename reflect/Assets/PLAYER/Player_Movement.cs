@@ -30,10 +30,15 @@ public class Player_Movement : MonoBehaviour
 
     private Player_View pView;
 
+    public PhysicMaterial slidePhysMat;
+    public PhysicMaterial defaultPhysMat;
+    [HideInInspector] public bool stunned = false;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody>();
         pView = GetComponentInChildren<Player_View>();
+        GetComponent<Collider>().material = defaultPhysMat;
         
         InputX += playerNum;
         InputY += playerNum;
@@ -51,6 +56,7 @@ public class Player_Movement : MonoBehaviour
 
         body.velocity = new Vector3(vel.x, body.velocity.y, vel.y);
 
+        if (stunned) return;
         if (Math.Abs(_inputX) < breakingThreshold && Math.Abs(_inputY) < breakingThreshold && Math.Abs(body.velocity.y) < 0.1 )
         {
             body.velocity = Vector3.Lerp(body.velocity, Vector3.zero, breaking);
@@ -61,11 +67,35 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (stunned)
+        {
+            _inputX = 0;
+            _inputY = 0;
+            return;
+        }
+        
         _inputX = Input.GetAxis(InputX);
         _inputY = Input.GetAxis(InputY);
         if (Input.GetButtonDown(InputJump)) Jump();
     }
 
+    public void Knockback(float force, float duration)
+    {
+        StartCoroutine(KnockbackRoutine(force, duration));
+    }
+
+    IEnumerator KnockbackRoutine(float force, float duration)
+    {
+        Collider col = GetComponent<Collider>();
+        col.material = slidePhysMat;
+        body.AddRelativeForce(-pView.transform.forward * force);
+        stunned = true;
+        
+        yield return new WaitForSecondsRealtime(duration);
+        stunned = false;
+        col.material = defaultPhysMat;
+    }
+    
     public delegate void HitGround();
     public event HitGround OnHitGround;
     

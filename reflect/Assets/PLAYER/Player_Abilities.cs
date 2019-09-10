@@ -9,11 +9,10 @@ public class Player_Abilities : MonoBehaviour
     [HideInInspector] private Player_Movement pMove;
     [HideInInspector] public Player_View pView;
     
-    public string InputXButton;
-    public string InputYButton;
-    public string InputBButton;
-    
-    
+    public string InputXButton = "X";
+    public string InputYButton = "Y";
+    public string InputBButton = "B";
+    public string InputAButton = "A";
     
     private void Awake()
     {
@@ -23,12 +22,14 @@ public class Player_Abilities : MonoBehaviour
         InputXButton += pMove.playerNum;
         InputYButton += pMove.playerNum;
         InputBButton += pMove.playerNum;
+        InputAButton += pMove.playerNum;
     }
 
     void Update()
     {
          if (Input.GetButtonDown(InputXButton)) XButton();
          if (Input.GetButtonDown(InputBButton)) BButton();
+         if (Input.GetButtonDown(InputAButton)) AButton();
          if (Input.GetButtonDown(InputYButton)) YButton();
          
          Debug.DrawLine(transform.position, pView.gameObject.transform.position + (pView.gameObject.transform.forward * 4), Color.blue, 0.1f);
@@ -43,9 +44,9 @@ public class Player_Abilities : MonoBehaviour
 //        Gizmos.DrawSphere(transform.position + pView.transform.forward, 3);
 //    }
 
-    bool CheckBall()
+    bool CheckBall(float radius = 3)
     {
-        Collider[] col = Physics.OverlapSphere(transform.position + pView.transform.forward, 3);
+        Collider[] col = Physics.OverlapSphere(transform.position + pView.transform.forward, radius);
 
         foreach (Collider c in col)
         {
@@ -55,30 +56,39 @@ public class Player_Abilities : MonoBehaviour
         return false;
     }
     
+    void AButton()
+    {
+        Debug.Log("Pressing A");
+        if (!CheckBall(2.5f)) return;
+        
+        Debug.Log("hitball");
+        Ball.instance.Pie(pView.transform.forward.x, pView.transform.forward.z);
+    }
+    
     void BButton()
     {
         Debug.Log("Pressing B");
-        if (!CheckBall()) return;
+        if (!CheckBall(2.5f)) return;
         
         Debug.Log("hitball");
         //Vector3 force = Vector3.Normalize(Ball.GameBall.transform.position - transform.position);
         Ball.instance.Watermelon(pView.transform.forward.x, pView.transform.forward.z);
-        pMove.body.AddRelativeForce((transform.position - Ball.GameBall.transform.position) * 30);
+        pMove.Knockback(9000, 0.5f);
     }
 
     void XButton()
     {
         Debug.Log("Pressing X");
-        if (!CheckBall()) return;
+        if (!CheckBall(2.5f)) return;
         
         Debug.Log("hitball");
         Ball.instance.Jam(pView.transform.forward.x, pView.transform.forward.z);
     }
-
+    
     void YButton()
     {
         Debug.Log("Pressing Y");
-        if (!CheckBall()) return;
+        if (!CheckBall(2.5f)) return;
         
         Debug.Log("hitball");
         Ball.instance.Chilli(pView.transform.forward.x, pView.transform.forward.z);

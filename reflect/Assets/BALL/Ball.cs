@@ -58,7 +58,8 @@ public class Ball : MonoBehaviour
 
     public void Pie(float x, float z)
     {
-
+        transform.localScale = Vector3.one * 0.9f;
+        ThrowBall(x, z, 2f);
     }
 
     public void Watermelon(float x, float z)
