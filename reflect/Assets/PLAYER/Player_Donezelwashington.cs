@@ -65,13 +65,16 @@ public class Player_Donezelwashington : MonoBehaviour
         {
             Ball.GameBall.transform.position = Player1.transform.position + (player1View.forward * 5);
             Ball.GameBall.transform.position = new Vector3(Ball.GameBall.transform.position.x, ballStartY, Ball.GameBall.transform.position.z);
+            Ball.instance.lastPlayer = Player1;
         }
         else
         {
             Ball.GameBall.transform.position = Player2.transform.position + (player2View.forward * 5);
             Ball.GameBall.transform.position = new Vector3(Ball.GameBall.transform.position.x, ballStartY, Ball.GameBall.transform.position.z);
+            Ball.instance.lastPlayer = Player2;
         }
 
+        Ball.instance.speed = Ball.instance.baseSpeed;
         Ball.instance.body.velocity = Vector3.zero;
         Ball.GameBall.transform.localScale = Vector3.one;
     }
