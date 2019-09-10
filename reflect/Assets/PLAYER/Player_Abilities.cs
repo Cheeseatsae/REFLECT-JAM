@@ -68,6 +68,7 @@ public class Player_Abilities : MonoBehaviour
         
         Debug.Log("hitball");
         StartCoroutine(HoldBall());
+        
     }
 
     IEnumerator HoldBall()
