@@ -13,6 +13,9 @@ public class Player_Abilities : MonoBehaviour
     public string InputYButton = "Y";
     public string InputBButton = "B";
     public string InputAButton = "A";
+
+    public delegate void ButtonPush();
+    public event ButtonPush OnButtonPush;
     
     private void Awake()
     {
@@ -88,6 +91,7 @@ public class Player_Abilities : MonoBehaviour
             
             yield return null;
         }
+        OnButtonPush?.Invoke();
         Ball.instance.Pie(pView.transform.forward.x, pView.transform.forward.z, this.gameObject);
         ballHeld = false;
     }
@@ -97,6 +101,7 @@ public class Player_Abilities : MonoBehaviour
         Debug.Log("Pressing B");
         if (cooldown) return;
         if (!CheckBall(2.5f)) return;
+        OnButtonPush?.Invoke();
         StartCoroutine(Cooldown());
         Debug.Log("hitball");
         //Vector3 force = Vector3.Normalize(Ball.GameBall.transform.position - transform.position);
@@ -109,6 +114,7 @@ public class Player_Abilities : MonoBehaviour
         Debug.Log("Pressing X");
         if (cooldown) return;
         if (!CheckBall(2.5f)) return;
+        OnButtonPush?.Invoke();
         StartCoroutine(Cooldown());
         Debug.Log("hitball");
         Ball.instance.Jam(pView.transform.forward.x, pView.transform.forward.z, this.gameObject);
@@ -119,6 +125,7 @@ public class Player_Abilities : MonoBehaviour
         Debug.Log("Pressing Y");
         if (cooldown) return;
         if (!CheckBall(2.5f)) return;
+        OnButtonPush?.Invoke();
         StartCoroutine(Cooldown());
         Debug.Log("hitball");
         Ball.instance.Chilli(pView.transform.forward.x, pView.transform.forward.z, this.gameObject);
