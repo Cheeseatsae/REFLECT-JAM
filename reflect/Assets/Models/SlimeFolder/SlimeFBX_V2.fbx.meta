@@ -9,7 +9,17 @@ ModelImporter:
   - first:
       74: 5539831331247536789
     second: Jump
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 8ea01b34741c1394d86ddd2a4f136930, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 0c2b495ab4c5ec94eab8c32b1bae4579, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
