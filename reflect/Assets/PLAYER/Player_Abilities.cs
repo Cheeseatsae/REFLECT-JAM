@@ -73,6 +73,7 @@ public class Player_Abilities : MonoBehaviour
 
     IEnumerator HoldBall()
     {
+        Ball.instance.SetNewFood(2);
         ballHeld = true;
         float duration = 1 + (Ball.instance.speed * 0.004f);
         StartCoroutine(Cooldown(duration + 0.2f));
